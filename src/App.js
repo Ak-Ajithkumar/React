@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState ,useEffect} from "react";
 import Main from "./components/Main";
 import "./App.css";
 import List from "./components/List";
@@ -8,6 +8,11 @@ function App() {
 
   const[input,setInput]=useState("")
   const[add,setAdd]=useState([])
+
+  useEffect(()=>{
+    localStorage.setItem('add',JSON.stringify(add));
+  },[add]);
+
   return (
     <div className="App">
       <Main />
