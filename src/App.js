@@ -7,16 +7,20 @@ import "./App.css";
 import Datafetching from "./components/Datafetching";
 // import { useState,useEffect} from "react"
 // import Pagination from "@material-ui/lab/Pagination";
+import { Provider } from "react-redux";
+
+// import UserContainer from "./components/user/userContainer";
+import store from "./Store";
 
 function App() {
   // const [input, setInput] = useState("");
   // const [add, setAdd] = useState([]);
   // const [edit, setEdit] = useState(null);
-  
-
+  // const store = createStore(useReducer)
   return (
-    <div className="App">
-      {/* <Main />
+    <Provider store={store}>
+      <div className="App">
+        {/* <Main />
       <List
         input={input}
         setInput={setInput}
@@ -29,12 +33,13 @@ function App() {
       <h1>
         <Clock />
         
+
       </h1> */}
-      <h1>Fetching Data </h1>
-      <Datafetching />
-      
-      
-    </div>
+        {/* <UserContainer /> */}
+        <h1>Fetching Data </h1>
+        <Datafetching />
+      </div>
+    </Provider>
   );
 }
 
